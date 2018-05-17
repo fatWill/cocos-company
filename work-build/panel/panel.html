@@ -1,0 +1,38 @@
+<h2>构建参数配置</h2>
+<section>
+  <ui-prop name="是否启用自动构建" tooltip="注意事项：自动构建会启用nodejs的文件系统去修改配置cocos构建打包后的文件，如果这个勾选取消，则不执行自动构建的方法，以下的配置也全部失效" tabindex="-1">
+    <ui-checkbox v-bind:checked="isAuto" v-on:click="isAuto = !isAuto" class="flex-1" tabindex="-1"></ui-checkbox>
+  </ui-prop>
+  <div id="isAuto" v-if="isAuto">
+    <hr>
+    <!-- <ui-prop name="svn绝对路径" tooltip="输入你在本地svn的h5项目的绝对根路径，如：/Users/fatwill/Desktop/work/h5" tabindex="-1">
+      <ui-input class="flex-1" tabindex="-1" v-model="data.url"></ui-input>
+      
+    </ui-prop> -->
+    <input type="text" v-model="data.url">
+    <ui-prop name="是否移植js文件" tooltip="移植打包过后的src文件，注意事项：文件流打包过后会先删除原先的文件" tabindex="-1">
+      <ui-checkbox v-bind:checked="data.isJs" v-on:click="data.isJs = !data.isJs" class="flex-1" tabindex="-1"></ui-checkbox>
+    </ui-prop>
+    <ui-prop name="是否移植import文件" tooltip="移植打包过后的res/import文件，注意事项：文件流打包过后会先删除原先的文件" tabindex="-1">
+      <ui-checkbox v-bind:checked="data.isImport" v-on:click="data.isImport = !data.isImport" class="flex-1" tabindex="-1"></ui-checkbox>
+    </ui-prop>
+    <ui-prop name="是否移植image文件" tooltip="移植打包过后的res/raw-*文件，注意事项：文件流打包过后会先删除原先的文件" tabindex="-1">
+      <ui-checkbox v-bind:checked="data.isImage" v-on:click="data.isImage = !data.isImage" class="flex-1" tabindex="-1"></ui-checkbox>
+    </ui-prop>
+    <ui-prop name="是否覆盖index.html" tooltip="谨慎勾选" tabindex="-1">
+      <ui-checkbox v-bind:checked="data.isCovHTML" v-on:click="data.isCovHTML = !data.isCovHTML" class="flex-1" tabindex="-1"></ui-checkbox>
+    </ui-prop>
+    <ui-prop name="是否覆盖stype-mobile.css" tooltip="谨慎勾选" tabindex="-1">
+      <ui-checkbox v-bind:checked="data.isCovCss" v-on:click="data.isCovCss = !data.isCovCss" class="flex-1" tabindex="-1"></ui-checkbox>
+    </ui-prop>
+    <ui-prop name="是否覆盖main.js" tooltip="谨慎勾选" tabindex="-1">
+      <ui-checkbox v-bind:checked="data.isCovMAINJS" v-on:click="data.isCovMAINJS = !data.isCovMAINJS" class="flex-1" tabindex="-1"></ui-checkbox>
+    </ui-prop>
+    <ui-prop name="是否在构建后删除打包文件" tabindex="-1">
+      <ui-checkbox v-bind:checked="data.isRmDir" v-on:click="data.isRmDir = !data.isRmDir" class="flex-1" tabindex="-1"></ui-checkbox>
+    </ui-prop>
+  </div>
+</section>
+<footer  class="group layout horizontal center">
+  <ui-button id="btn" v-on:confirm="send()" class="green">保存</ui-button>
+</footer>

@@ -1,0 +1,20 @@
+{
+  "name": "work-build",
+  "version": "0.0.1",
+  "description": "构建打包后js路径修改",
+  "author": "fatwill",
+  "main": "main.js",
+  "main-menu": {
+  	"项目/猴彩配置": {
+      "message": "work-build:open"
+    }
+  },
+  "panel": {
+    "main": "panel/panel.js",
+    "type": "dockable",
+    "title": "配置...",
+    "width": 1500,
+    "height": 800,
+    "messages": []
+  }
+}

@@ -1,0 +1,39 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    contain: content;
+}
+h2 {
+    margin: 20px 20px 0 20px;
+    font-size: 26px;
+    color: #DDD;
+    font-weight: bold;
+}
+section {
+    margin: 10px 10px;
+    padding: 0 10px;
+    flex: 1;
+    overflow-y: auto;
+}
+footer {
+    border-top: 1px solid #666;
+    padding: 15px 0;
+    margin: 0 20px;
+    justify-content: flex-end;
+}
+.layout.horizontal, .layout.horizontal-reverse, .layout.vertical, .layout.vertical-reverse {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.layout.horizontal {
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+.layout.center, .layout.center-center {
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
